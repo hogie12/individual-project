@@ -6,10 +6,13 @@
 
 @media only screen and (max-width: 600px) {
   .search-input {
-    position:relative;
+    position: relative;
     display: flex;
     justify-content: center;
     transform: none;
     left: 0;
+  }
+  .search-text {
+    width: 8rem;
   }
 }

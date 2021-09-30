@@ -24,6 +24,7 @@ export default function Header() {
               </h2>
             </div>
           </Navbar.Brand>
+        </Container>
           <div className="search-input">
             <form
               style={{
@@ -32,13 +33,12 @@ export default function Header() {
               }}
               onSubmit = {handleSubmit}
             >
-              <input placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
+              <input placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} className="search-text"/>
               <Button variant="outline-danger" className="ms-3" type="submit">
                 search
               </Button>
             </form>
           </div>
-        </Container>
       </Navbar>
     </div>
   );
