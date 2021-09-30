@@ -1,1 +1,1 @@
-# Glints-Tech-Project-Individual-
+# Glints-Tech-Project-Individual
