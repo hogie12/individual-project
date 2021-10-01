@@ -8,35 +8,36 @@ import { getGamesById } from "../../store/action";
 import { RatingView } from "react-simple-star-rating";
 
 export default function DetailPage() {
-  const [localStorageData, setLocalStorageData] = useState(
+  const [localStorageData] = useState(
     JSON.parse(localStorage.getItem("session")) || []
   );
   const { data, isLoading } = useSelector((state) => state.gameDetail);
   const { id } = useParams();
+  const [isFavorite, setIsFavorite] = useState(
+    localStorageData.some((e) => e.id === data.id)
+  );
   const dispatch = useDispatch();
+  console.log(isFavorite);
 
   useEffect(() => {
     dispatch(getGamesById(id));
   }, [dispatch, id]);
 
+  useEffect(() => {
+    setIsFavorite(localStorageData.some((e) => e.id === data.id));
+  }, [data.id, localStorageData]);
+
   const addToLocalStorage = () => {
-    if (localStorageData.some((e) => e.id === data.id)) {
-      alert("already on favorite");
-    } else {
-      setLocalStorageData(localStorageData.push(data));
-    }
-    localStorage.setItem("session", JSON.stringify(localStorageData));
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
+    let a = localStorageData;
+    a.push(data);
+    localStorage.setItem("session", JSON.stringify(a));
+    setIsFavorite(true);
   };
 
   const removeFromLocalStorage = () => {
     let a = localStorageData.filter((fil) => fil.id !== data.id);
     localStorage.setItem("session", JSON.stringify(a));
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
+    setIsFavorite(false);
   };
 
   return (
@@ -78,7 +79,7 @@ export default function DetailPage() {
                 </Button>
               ))}
               <div className="pt-2">
-                {localStorageData.some((e) => e.id === data.id) ? (
+                {isFavorite ? (
                   <Button
                     variant="danger"
                     className="rounded-pill m-1"
