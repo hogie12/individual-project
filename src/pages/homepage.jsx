@@ -82,16 +82,14 @@ export default function Homepage() {
             ))}
           </div>
           <div className="text-center m-5 fw-bold">
-            {page !== 1 && (
-              <Button
-                variant="danger"
-                className="me-3"
-                disable={true}
-                onClick={() => setPage(page - 1)}
-              >
-                PREVIOUS
-              </Button>
-            )}
+            <Button
+              variant="danger"
+              className="me-3"
+              disabled={page === 1}
+              onClick={() => setPage(page - 1)}
+            >
+              PREVIOUS
+            </Button>
             <Button variant="danger" onClick={() => setPage(page + 1)}>
               NEXT
             </Button>

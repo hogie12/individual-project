@@ -54,7 +54,7 @@ export default function DetailPage() {
             <>
               <div
                 className="d-flex justify-content-center mt-5"
-                style={{ height: "75vh" }}
+                style={{ height: "80vh" }}
               >
                 <div className="spinner-border" role="status">
                   <span className="sr-only"></span>

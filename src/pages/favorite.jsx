@@ -39,7 +39,7 @@ export default function FavoritePage() {
             </div>
           ) : (
             <div className="d-flex flex-wrap justify-content-center" 
-            style={{height:"75vh"}}
+            style={{height:"80vh"}}
             >
               {data.map((data, idx) => (
                 <div style={{ width: "20rem" }} className="p-3" key={idx}>
