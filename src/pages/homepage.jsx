@@ -52,7 +52,7 @@ export default function Homepage() {
               variant="danger"
               className="me-3 mb-3"
               style={{ borderRadius: "25px" }}
-              onClick={() => setTittle("")}
+              onClick={() => [setTittle(""), setJudul("")]}
             >
               All Games
             </Button>
