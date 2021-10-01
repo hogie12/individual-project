@@ -1,19 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import "./detail.css";
-import DetailNav from "./detailNav";
+import Nav from "../../component/nav";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { getGamesById } from "../../store/action";
 import { RatingView } from "react-simple-star-rating";
 
 export default function DetailPage() {
+  const [localStorageData, setLocalStorageData] = useState(
+    JSON.parse(localStorage.getItem("session")) || []
+  );
   const { data, isLoading } = useSelector((state) => state.gameDetail);
   const { id } = useParams();
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getGamesById(id));
   }, [dispatch, id]);
+
+  const addToLocalStorage = () => {
+    if (localStorageData.some((e) => e.id === data.id)) {
+      alert("already on favorite");
+    } else {
+      setLocalStorageData(localStorageData.push(data));
+    }
+    localStorage.setItem("session", JSON.stringify(localStorageData));
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  };
+
+  const removeFromLocalStorage = () => {
+    let a = localStorageData.filter((fil) => fil.id !== data.id);
+    localStorage.setItem("session", JSON.stringify(a));
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  };
+
   return (
     <>
       <div
@@ -23,7 +48,7 @@ export default function DetailPage() {
         className="background"
       >
         <Container>
-          <DetailNav />
+          <Nav />
           {isLoading ? (
             <>
               <div
@@ -52,6 +77,26 @@ export default function DetailPage() {
                   {data.name}
                 </Button>
               ))}
+              <div className="pt-2">
+                {localStorageData.some((e) => e.id === data.id) ? (
+                  <Button
+                    variant="danger"
+                    className="rounded-pill m-1"
+                    onClick={removeFromLocalStorage}
+                  >
+                    Remove From Favorite
+                  </Button>
+                ) : (
+                  <Button
+                    variant="danger"
+                    className="rounded-pill m-1"
+                    onClick={addToLocalStorage}
+                    disabled={false}
+                  >
+                    Add To Favorite
+                  </Button>
+                )}
+              </div>
               <h5 className="pt-3">Description :</h5>
               <p>{data?.description_raw}</p>
               <div className="pt-2 pb-2">

@@ -4,6 +4,7 @@ import Footer from "../component/footer";
 import Header from "../component/header/header";
 import DetailPage from "../pages/detail/detail";
 import Homepage from "../pages/homepage";
+import FavoritePage from "../pages/favorite";
 
 export default function Routers() {
   return (
@@ -15,6 +16,9 @@ export default function Routers() {
         </Route>
         <Route path="/game/:id">
           <DetailPage />
+        </Route>
+        <Route path="/favorites">
+          <FavoritePage />
         </Route>
         <Route path="*">not found</Route>
       </Switch>
