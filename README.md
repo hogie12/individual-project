@@ -11,6 +11,7 @@
       - thumbnail image
       - name
       - rating
+      - game categories
     - pagination
   - detail page
     - background image
@@ -20,4 +21,5 @@
       - thumbnail image
       - name
       - rating
+      - game categories
 - link : https://gamelist-project.netlify.app/
