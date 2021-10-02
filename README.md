@@ -3,8 +3,8 @@
 - homepage
   - game list
     - thumbnail image
-		- name
-		- rating
+    - name
+    - rating
   - filter game colection by categories
   - search game
   - pagination
