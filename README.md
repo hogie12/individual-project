@@ -5,12 +5,12 @@
 - implement favorite feature using local storage
 - page
   - homepage
+    - search game
+    - filter game by categories
     - game list
       - thumbnail image
       - name
       - rating
-    - filter game colection by categories
-    - search game
     - pagination
   - detail page
     - background image
