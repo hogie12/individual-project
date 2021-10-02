@@ -1,1 +1,25 @@
-# Glints-Tech-Project-Individual
+# Glints Academy Individual Project
+
+- responsive for phone and tablet
+- implement PWA so website can be download in chrome for desktop and android
+- implement favorite feature using local storage
+- page :
+  - homepage
+    - search game
+    - filter game by categories
+    - game list
+      - thumbnail image
+      - name
+      - rating
+      - game categories
+    - pagination
+  - detail page
+    - background image
+    - game information
+  - favorite page
+    - game list
+      - thumbnail image
+      - name
+      - rating
+      - game categories
+- link : https://gamelist-project.netlify.app/
