@@ -3,7 +3,7 @@
 - responsive for phone and tablet
 - implement PWA so website can be download in chrome for desktop and android
 - implement favorite feature using local storage
-- page
+- page :
   - homepage
     - search game
     - filter game by categories
