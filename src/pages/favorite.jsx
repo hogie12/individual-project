@@ -23,37 +23,22 @@ export default function FavoritePage() {
         </>
       ) : (
         <>
-          {data.length > 3 ? (
-            <div className="d-flex flex-wrap justify-content-center">
-              {data.map((data, idx) => (
-                <div style={{ width: "20rem" }} className="p-3" key={idx}>
-                  <GamesCard
-                    image={data?.background_image}
-                    tittle={data?.name}
-                    rating={Math.floor(data.rating)}
-                    genres={data.genres}
-                    id={data.id}
-                  />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="d-flex flex-wrap justify-content-center" 
-            style={{height:"80vh"}}
-            >
-              {data.map((data, idx) => (
-                <div style={{ width: "20rem" }} className="p-3" key={idx}>
-                  <GamesCard
-                    image={data?.background_image}
-                    tittle={data?.name}
-                    rating={Math.floor(data.rating)}
-                    genres={data.genres}
-                    id={data.id}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
+          <div
+            className="d-flex flex-wrap justify-content-center"
+            style={data < 3 && { height: "100vh" }}
+          >
+            {data.map((data, idx) => (
+              <div style={{ width: "20rem" }} className="p-3" key={idx}>
+                <GamesCard
+                  image={data?.background_image}
+                  tittle={data?.name}
+                  rating={Math.floor(data.rating)}
+                  genres={data.genres}
+                  id={data.id}
+                />
+              </div>
+            ))}
+          </div>
         </>
       )}
     </Container>
