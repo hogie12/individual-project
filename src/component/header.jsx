@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./header.css";
 import { Navbar, Container, Button, Nav } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getGamesBySearch } from "../store/action";
