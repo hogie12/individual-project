@@ -1,24 +1,23 @@
-# Glints-Tech-Project-Individual
+# Glints Academy Individual Project
 
-- homepage
-  - game list
-    - thumbnail image
-    - name
-    - rating
-  - filter game colection by categories
-  - search game
-  - pagination
-- detail page
-  - background image
-  - rating 
-  - total review
-  - categories
-  - game description
-  - release date
-  - game tags
-  - platforms
-  - developer
-  - publisher
-- favorite page using local storage
-  - 
-- 
+- responsive for phone and tablet
+- implement PWA so website can be download in chrome for desktop and android
+- implement favorite feature using local storage
+- page
+  - homepage
+    - game list
+      - thumbnail image
+      - name
+      - rating
+    - filter game colection by categories
+    - search game
+    - pagination
+  - detail page
+    - background image
+    - game information
+  - favorite page
+    - game list
+      - thumbnail image
+      - name
+      - rating
+- link : https://gamelist-project.netlify.app/
