@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container, Button } from "react-bootstrap";
-import "./detail.css";
-import Nav from "../../component/nav";
+import Nav from "../component/nav";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { getGamesById } from "../../store/action";
+import { getGamesById } from "../store/action";
 import { RatingView } from "react-simple-star-rating";
 
 export default function DetailPage() {
@@ -44,9 +43,12 @@ export default function DetailPage() {
     <>
       <div
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(34,38,42,7)), url(${data?.background_image}`,
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.5),#212529), url(${data?.background_image}`,
+          color:"white"
         }}
-        className="background"
+        // className="background"
       >
         <Container>
           <Nav />
@@ -103,15 +105,16 @@ export default function DetailPage() {
               <div className="pt-2 pb-2">
                 <h5> Release Date : {data.released}</h5>
               </div>
-              <div className="d-lg-flex justify-content-between pb-3">
-                <div>
+              <div>
                   <h5>Tags : </h5>
-                  <ul>
+                  <p>{data?.tags.map(data => `${data.name}, `)}</p>
+                  {/* <ul>
                     {data?.tags?.map((data, idx) => (
                       <li key={idx}>{data.name}</li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </div>
+              <div className="d-lg-flex justify-content-between pb-3">
                 <div>
                   <h5>Platforms : </h5>
                   <ul>

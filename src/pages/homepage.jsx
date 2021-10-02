@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Button } from "react-bootstrap";
 import { getAllGames } from "../store/action";
-import GamesCard from "../component/card/card";
+import GamesCard from "../component/card";
 import "./scroll.css";
 
 export default function Homepage() {

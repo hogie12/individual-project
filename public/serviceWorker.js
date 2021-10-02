@@ -1,6 +1,6 @@
 var self = this;
 
-let CACHE_NAME = 'musicon-cache-v1';
+let CACHE_NAME = 'gamelist-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GamesCard from "../component/card/card";
+import GamesCard from "../component/card";
 import { Container } from "react-bootstrap";
 import Nav from "../component/nav";
 
