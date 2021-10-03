@@ -22,4 +22,4 @@
       - name
       - rating
       - game categories
-- link : https://gamelist-rawg.netlify.app/
+- link : https://rawg-gamelist.netlify.app/
