@@ -107,7 +107,7 @@ export default function DetailPage() {
               </div>
               <div>
                   <h5>Tags : </h5>
-                  <p>{data?.tags.map(data => `${data.name}, `)}</p>
+                  <p>{data?.tags?.map(data => `${data.name}, `)}</p>
                   {/* <ul>
                     {data?.tags?.map((data, idx) => (
                       <li key={idx}>{data.name}</li>
